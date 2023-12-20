@@ -1,0 +1,58 @@
+<section class="vh-100">
+    <div id="bg-image"></div>
+    <div class="container py-5 h-100">
+        <header>
+            <h1>IT STEP ACADEMY</h1>
+        </header>
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <carousel>
+                    <slide>
+                      <img src="../../assets/4.jpg" alt="First slide" style="width: 100%;">
+                    </slide>
+                    <slide >
+                      <img src="../../assets/1.jpg" alt="Second slide" style="width: 100%;">
+                    </slide>
+                    <slide>
+                      <img src="../../assets/42b49dd8-1c82-4a99-823c-ce091c70e677.jpg" alt="Third slide" style="width: 100%;">
+                    </slide>
+                    <slide>
+                        <img src="../../assets/ace60b73-1b15-4882-8e0b-a0868d2e98eb.jpg" alt="Third slide" style="width: 100%;">
+                      </slide>
+                  </carousel>                  
+            </div>
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                <form>
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <input type="email" id="form1Example13" class="form-control form-control-lg" />
+                        <label class="form-label" for="form1Example13">Email address</label>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                        <input type="password" id="form1Example23" class="form-control form-control-lg" />
+                        <label class="form-label" for="form1Example23">Password</label>
+                    </div>
+
+                    <div class="d-flex justify-content-around align-items-center mb-4">
+                        <!-- Checkbox -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                            <label class="form-check-label" for="form1Example3"> Remember me </label>
+                        </div>
+                        <a href="#!">Forgot password?</a>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button id="btnSignIn" type="submit" class="btn btn-primary btn-lg btn-block">Sign
+                        In</button>
+                    <button id="btnSignUp" type="button" class="mx-5 mb-0 btn btn-dark btn-lg btn-block"
+                        (click)="OnSignUpClick()">Sign
+                        Up</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
