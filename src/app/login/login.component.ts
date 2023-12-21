@@ -58,5 +58,6 @@ export class LoginComponent {
     doSignUp(){
       this.router.navigate(['/sign-up'], {replaceUrl: true , relativeTo: this.route});
     }
-
+    
+    
 }
