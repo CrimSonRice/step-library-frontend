@@ -1,15 +1,14 @@
-import { Component} from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
+import {Component} from '@angular/core';
+
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [ReactiveFormsModule,CarouselModule],
+  imports: [],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
 })
 export class HomePageComponent {
-  
-  
+
+ 
 }
