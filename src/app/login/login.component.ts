@@ -25,13 +25,14 @@ export class LoginComponent {
     private route:ActivatedRoute,
     private builder:FormBuilder,
     private storage:StorageService ){
+      this.cred = {username: null, password: null, api_token: ''};
       this.router = router;
       this.route = route;
       if(window.localStorage.getItem('user_logined')){
         this.router.navigate(['/home'], {replaceUrl:true, relativeTo:this.route});
       }
       if(this.router.getCurrentNavigation()?.extras.state){
-        const state = this.router.getCurrentNavigation()?.extras.state??{register}
+        const state = this.router.getCurrentNavigation()?.extras.state??{register: this.route}
         if(state['registerd'] == true){
           this.message = "Registered SUCCESSFULLY!!!";
         }
@@ -53,8 +54,9 @@ export class LoginComponent {
         }
       })
     }
-
+  
     doSignUp(){
       this.router.navigate(['/sign-up'], {replaceUrl: true , relativeTo: this.route});
     }
+
 }
