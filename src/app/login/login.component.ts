@@ -13,7 +13,7 @@ import { environment } from '../../environments/environment.development';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  cred:Partial<{ username: string | null, password:string | null, api_token: string; }>;
+  cred:Partial<{ username: string | null, password:string | null, api_token: string; }>={username: '', password: '',api_token: environment.API_TOKEN};
   user = this.builder.group({
     username: ['', Validators.required],
     password: ['', Validators.required]
@@ -25,7 +25,6 @@ export class LoginComponent {
     private route:ActivatedRoute,
     private builder:FormBuilder,
     private storage:StorageService ){
-      this.cred = {username: null, password: null, api_token: ''};
       this.router = router;
       this.route = route;
       if(window.localStorage.getItem('user_logined')){
