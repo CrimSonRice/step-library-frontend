@@ -1,1 +1,18 @@
-<p>books works!</p>
+<div *ngIf="|isloadingBooks; else loadingBooks">
+    <div class="row mx2">
+        <div class="col-3" *ngFor="let item of books">
+            <div class="card w-100 mt-3">
+                <img class="card-img-top text-white bg-light text-center" src="{{item.image}}" [alt]="books">
+                <div class="card-body">
+                    <h5 class="card-title" style="-webkit-line-clamp: 3; -webkit-box-orient: vertical; text-overflow: ellipsis;">{{item.name}}</h5>
+                    <p class="card-text">It is an active group. You can join this group to get new books for free</p>
+                    <a href="{{item.path}}" class="btn btn-primary" target="_blank">Download</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<ng-template #loadingBooks>
+    <div class="text-danger">Loading books...</div>
+</ng-template>
