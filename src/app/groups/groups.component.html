@@ -10,12 +10,12 @@
                         <div class="card-body">
                             <h5 class="card-title">{{item.id}}, {{item.name}}</h5>
                             <p class="card-text">It is an active group. You can join this group to get new books for free.</p>
-                            <button type="button" class="btn btn-primary" [class.disabled] = "inJoiningProgress" (click)="doJoingGroup(item.id)">Join {{item.name}}</button>
+                            <button type="button" class="btn btn-primary" [class.disabled]="inJoiningProgress" (click)="doJoinGroups(item.id)">Join {{item.name}}</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <ng-template #loading><div class="tex-warning">Loading...</div></ng-template>
+    <ng-template #loading><div class="text-warning">Loading...</div></ng-template>
 </div>
