@@ -15,7 +15,7 @@ export class SignupComponent {
   registerForm: FormGroup;
   errorMessage: string = '';
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private route:ActivatedRoute,) {
     this.registerForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
@@ -44,7 +44,7 @@ export class SignupComponent {
       .then(response => response.json())
       .then(data => {
         if (data.status === 'SUCCESS') {
-          this.router.navigate(['/login']);
+          this.router.navigate([''], {replaceUrl: true, relativeTo: this.route});
         } else {
           this.errorMessage = data.error;
         }
