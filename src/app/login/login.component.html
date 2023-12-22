@@ -47,7 +47,7 @@
 
                     <!-- Submit button -->
                     <div [class.hidden]="message==''" class="text-danger">{{message}}</div>
-                    <button id="btnSignIn" type="submit" class="btn btn-primary btn-lg btn-block">Sign
+                    <button id="btnSignIn" type="submit" class="btn btn-primary btn-lg btn-block" (click)="doLogin()">Sign
                         In</button>
                         <button id="btnSignUp" type="button" (click)="doSignUp()" class="mx-5 mb-0 btn btn-dark btn-lg btn-block"
                         >Sign

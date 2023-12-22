@@ -24,7 +24,7 @@ export class GroupsComponent {
   }
 
   async loadGroups(){
-    const res = await fetch(environment.API_URL + 'groups.php?api_token='+environment.API_TOKEN)
+    const res = await fetch(environment.API_URL + 'groups.php?api_token='+environment.API_TOKEN )
     this.groups = res.groups;
   }
 

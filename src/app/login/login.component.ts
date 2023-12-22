@@ -18,7 +18,7 @@ export class LoginComponent {
     username: ['', Validators.required],
     password: ['', Validators.required]
   });
-  username = new FormControl('tola');
+  username = new FormControl('');
   password = new FormControl('');
   message:string = '';
   constructor(private router: Router,
@@ -53,7 +53,7 @@ export class LoginComponent {
         }
       })
     }
-  
+
     doSignUp(){
       this.router.navigate(['/sign-up'], {replaceUrl: true , relativeTo: this.route});
     }
