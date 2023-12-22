@@ -1,4 +1,4 @@
 export interface User {
-    user: any; // Define the type according to your needs
+    user: any;
     token: string;
 }

@@ -38,7 +38,7 @@ export class GroupsComponent {
     }).then(res=>res.json()).then(res=>{
       console.log(res);
       if(this.user.user) this.user.user.group_id = group_id;
-      this.storage.setItem('use_logined', JSON.stringify(this.user));
+      this.storage.setItem('user_logined', JSON.stringify(this.user));
 
       this.router.navigateByUrl('/', {skipLocationChange:true}).then(()=>{
         this.router.navigate(['/home']);
