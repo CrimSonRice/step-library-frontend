@@ -45,6 +45,7 @@ export class SignupComponent {
       .then(data => {
         if (data.status === 'SUCCESS') {
           this.router.navigate([''], {replaceUrl: true, relativeTo: this.route});
+          alert("Registered Successfully!");
         } else {
           this.errorMessage = data.error;
         }
