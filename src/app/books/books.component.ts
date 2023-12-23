@@ -40,8 +40,6 @@ export class BooksComponent {
       }
     }
     this.isLoadingBooks = false;
-
-    
   }
 }
 

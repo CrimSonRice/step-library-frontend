@@ -19,4 +19,9 @@ export class StorageService {
   }
   
 clear(){this.storage.clear();}
+
+removeItem(key: string) {
+  this.storage.removeItem(key);
+}
+
 }

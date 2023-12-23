@@ -1,21 +1,44 @@
 <div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid"><a href="#" class="navbar-brand">Welcome</a><button type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+            <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a aria-current="page" href="/home" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="/home" class="nav-link">Link</a></li>
+                </ul>
+                <form role="search" class="d-flex">
+                    <button type="button" class="btn btn-danger me-1" (click)="doUnsubscribe()">Leave group</button>
+                    <button type="button" class="btn btn-secondary rounded-circle" (click)="doLogout()">⛌</button>
+                </form>
+            </div>
+        </div>
+    </nav>
     <div *ngIf="groups;else loading">
         <div class="row mx-2">
             <div class="col-4" *ngFor="let item of groups">
                 <div class="card w-100 mt-3">
-                    <div class="card img-top-text-white bg-light text-center d-flex justify-content-center" style="height: 120px;">
-                        <div class="rounded-circle bg-primary d-flex justify-content-center align-items-center" style="width: 100px; height: 100px;">
+                    <div class="card img-top-text-white bg-light text-center d-flex justify-content-center"
+                        style="height: 120px;">
+                        <div class="rounded-circle bg-primary d-flex justify-content-center align-items-center"
+                            style="width: 100px; height: 100px;">
                             {{item.name.substr(6).replace('_', ' ')}}
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{item.id}}, {{item.name}}</h5>
-                            <p class="card-text">It is an active group. You can join this group to get new books for free.</p>
-                            <button type="button" class="btn btn-primary" [class.disabled]="inJoiningProgress" (click)="doJoinGroups(item.id)">Join {{item.name}}</button>
+                            <p class="card-text">It is an active group. You can join this group to get new books for
+                                free.</p>
+                            <button type="button" class="btn btn-primary" [class.disabled]="inJoiningProgress"
+                                (click)="doJoinGroups(item.id)">Join {{item.name}}</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <ng-template #loading><div class="text-warning">Loading...</div></ng-template>
+    <ng-template #loading>
+        <div class="text-warning">Loading...</div>
+    </ng-template>
 </div>
