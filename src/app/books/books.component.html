@@ -1,6 +1,6 @@
 <div *ngIf="isLoadingBooks; else loadingBooks">
     <div class="row mx2">
-        <div class="col-3" *ngFor="let item of books">
+        <div class="col-4" *ngFor="let item of books">
             <div class="card w-100 mt-3">
                 <img class="card-img-top text-white bg-light text-center" src="{{item.image}}" alt="Book Image">
                 <div class="card-body">
@@ -15,42 +15,3 @@
 <ng-template #loadingBooks>
     <div class="text-danger">Loading books...</div>
 </ng-template>
-
-<script>
-    const apiToken = '<your_token>';
-const studentToken = '<student_token>';
-const search = '<part_of_title>'; // optional
-const sortOrder = '<asc>'; // optional
-
-const url = 'http://172.104.166.110:8008/api/FT_SD_A_3/books.php';
-const data = {
-  api_token: apiToken,
-  student_token: studentToken,
-  search: search,
-  sort_order: sortOrder
-};
-
-fetch(url, {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(data),
-})
-.then(response => response.json())
-.then(data => {
-  if (data.length > 0) {
-    data.forEach(book => {
-      console.log(`ID: ${book.id}, Title: ${book.title}`);
-      const downloadLink = `http://172.104.166.110:8008/api/FT_SD_A_3/${book.path}`;
-      console.log(`Download Link: ${downloadLink}`);
-    });
-  } else {
-    console.log('No books found.');
-  }
-})
-.catch((error) => {
-  console.error('Error:', error);
-});
-
-</script>
