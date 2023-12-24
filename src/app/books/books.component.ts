@@ -32,15 +32,17 @@ export class BooksComponent {
       student_token: this.user.token})
     }).then(res=>res.json()).catch(e=>alert(e));
     if(result){
-      this.books = result;
-      if(this.books){
-        this.books = this.books.map(b=>{return{...b,
+      if(Array.isArray(result)){
+        this.books = result;
+        this.books = this.books.map(b => {return{...b,
           path:`${this.serverUrl}${b.path}?api_token=${environment.API_TOKEN}&user_token=${this.user.token}`,
-          image: `${this.serverUrl}/images/${b.title.substring(0,8).toLowerCase()}.png`
-        };});
-        
+          image:`${this.serverUrl}/images/${b.title.substring(0,8).toLowerCase()}.png`
+      }});
+      } else {
+        console.log('Result is not an array:', result);
       }
-      console.log(result);
+    } else {
+      console.log('Result is null or undefined');
     }
     this.isLoadingBooks = false;
   }

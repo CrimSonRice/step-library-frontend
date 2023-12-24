@@ -81,6 +81,21 @@ export class GroupsComponent {
       })    
     }).catch(e=>alert(e))
     .finally(()=>this.inJoiningProgress = false);
+
+    /*
+    if(result){
+      this.books = result;
+      if(this.books){
+        this.books = this.books.map(b=>{return{...b,
+          path:`${this.serverUrl}${b.path}?api_token=${environment.API_TOKEN}&user_token=${this.user.token}`,
+          image: `${this.serverUrl}/images/${b.title.substring(0,8).toLowerCase()}.png`
+        };});
+        
+      }
+      console.log(result);
+    }
+    this.isLoadingBooks = false;
+    */
   }
   
 }
